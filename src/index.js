@@ -12,6 +12,7 @@ onmessage = function(e) {
 		} else if(ready && e.data.length == 32) {
 			AUTH = e.data;
 			$('iframe').remove();
+			$('#main').show();
 		}
 	} catch(e) {
 		console.warn('Login IFRAME not ready. Trying again.');

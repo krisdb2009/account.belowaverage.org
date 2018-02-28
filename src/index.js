@@ -13,6 +13,19 @@ onmessage = function(e) {
 			AUTH = e.data;
 			$('iframe').remove();
 			$('#main').show();
+			$.ajax({
+				url: 'https://api.belowaverage.org/v1/adphoto/',
+				method: 'post',
+				xhrFields: {
+					responseType: 'blob',
+				},
+				data: {
+					'AUTH': AUTH
+				},
+				success: function(data) {
+					$('img#profile').attr('src', URL.createObjectURL(data));
+				}
+			});
 		}
 	} catch(e) {
 		console.warn('Login IFRAME not ready. Trying again.');

@@ -13,6 +13,9 @@ onmessage = function(e) {
 			AUTH = e.data;
 			$('iframe').remove();
 			$('#main').show();
+			
+			$('input[type=hidden][name=AUTH]').val(AUTH);
+			
 			$.ajax({
 				url: 'https://api.belowaverage.org/v1/adphoto/',
 				method: 'post',

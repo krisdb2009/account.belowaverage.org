@@ -16,7 +16,11 @@
 				<h3>Profile Picture</h3>
 				<img id="profile" src="img/profile.png">
 				<p>
-					<input type="file">
+					<form method="post" action="https://api.belowaverage.org/v1/adphoto/" enctype="multipart/form-data">
+						<input type="file" name="img">
+						<input type="hidden" value="" name="AUTH">
+						<button>Save</button>
+					</form>
 				</p>
 				<h3>Name</h3>
 				<p>

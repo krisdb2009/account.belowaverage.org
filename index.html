@@ -11,68 +11,98 @@
     <body>
 		<iframe src="https://login.belowaverage.org/"></iframe>
 		<div id="main">
-			<h1>below average - account settings</h1>
+			<h1>below average - account settings</h1><a id="logout" href="#">Logout</a>
 			<hr>
 			<div id="settings">
-				<h3>Profile Picture</h3>
-				<img id="profile" src="img/profile.png">
-				<p>
-					<form method="post" action="https://api.belowaverage.org/v1/adphoto/" enctype="multipart/form-data">
-						<input type="file" name="img">
-						<input type="hidden" value="" name="AUTH">
-						<button>Save</button>
-					</form>
-				</p>
-				<h3>Name</h3>
-				<p>
-					Username: <input>
-				</p>
-				<p>
-					First Name: <input>
-				</p>
-				<p>
-					Last Name: <input>
-				</p>
-				<h3>General</h3>
-				<p>
-					Email: <input>
-				</p>
-				<p>
-					Web Page: <input>
-				</p>
-				<h3>Phone Number</h3>
-				<p>
-					Home: <input>
-				</p>
-				<p>
-					Mobile: <input>
-				</p>
-				<h3>Address</h3>
-				<p>
-					Street: <input>
-				</p>
-				<p>
-					City: <input>
-				</p>
-				<p>
-					State / Province: <input>
-				</p>
-				<p>
-					Zip / Postal Code: <input>
-				</p>
-				<p>
-					Country / Region: <input>
-				</p>
-				<h3>Reset Password</h3>
-				<p>
-					Old Password: <input>
-				</p>
-				<p>
-					New Password: <input>
-				</p>
-				<p>
-					New Password (Confirm): <input>
-				</p>
+				<fieldset>
+					<legend>Profile Picture</legend>
+					<img id="profile" src="img/profile.png">
+					<p>
+						<form method="post" action="https://api.belowaverage.org/v1/adphoto/" enctype="multipart/form-data">
+							<input type="file" name="img">
+							<input type="hidden" value="" name="AUTH">
+							<button>Save</button>
+						</form>
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>Name</legend>
+					<p>
+						Username: <input ldap="sAMAccountName" disabled>
+					</p>
+					<p>
+						First Name: <input ldap="givenName">
+					</p>
+					<p>
+						Initials: <input ldap="initials">
+					</p>
+					<p>
+						Last Name: <input ldap="sn">
+					</p>
+					<p>
+						Display Name: <input ldap="displayName">
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>General</legend>
+					<p>
+						Email: <input type="email" ldap="mail" disabled>
+					</p>
+					<p>
+						Phone Number: <input type="tel" ldap="telephoneNumber" disabled>
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>Address</legend>
+					<p>
+						Street: <input ldap="streetAddress">
+					</p>
+					<p>
+						City: <input ldap="l">
+					</p>
+					<p>
+						State / Province: <input ldap="st">
+					</p>
+					<p>
+						Zip / Postal Code: <input type="number" ldap="postalCode">
+					</p>
+					<p>
+						Country / Region: <input ldap="co">
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>Account Details</legend>
+					<p>
+						Account modified: <input ldap="whenChanged" disabled>
+					</p>
+					<p>
+						Account created: <input ldap="whenCreated" disabled>
+					</p>
+					<p>
+						Account expires: <input ldap="accountExpires" disabled>
+					</p>
+					<p>
+						Password modified: <input ldap="pwdLastSet" disabled>
+					</p>
+					<p>
+						Last failed logon: <input ldap="badPasswordTime" disabled>
+					</p>
+					<p>
+						Logon count: <input ldap="logonCount" disabled>
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>Reset Password</legend>
+					<p>
+						Old Password: <input>
+					</p>
+					<p>
+						New Password: <input>
+					</p>
+					<p>
+						Confirm Password: <input>
+					</p>
+				</fieldset>
 			</div>
 		</div>
     </body>
